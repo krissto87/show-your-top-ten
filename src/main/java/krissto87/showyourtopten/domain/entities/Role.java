@@ -1,0 +1,23 @@
+package krissto87.showyourtopten.domain.entities;
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity
+@Table(name = "roles")
+@Getter @Setter
+@ToString @EqualsAndHashCode(of = "id")
+public class Role {
+
+    @Id
+    private Long id;
+    @Column(nullable = false, unique = true)
+    private String name;
+
+}
