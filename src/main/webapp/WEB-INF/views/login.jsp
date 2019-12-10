@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>Zaloguj się</title>
     <%-- Elementy dotyczące treści strony --%>
     <%-- Elementy dotyczące wyświetlania --%>
     <meta name="viewport" content="width=device-width; initial-scale=1.0, maximum-scale=1.0"/>
@@ -14,53 +14,8 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 <body class="has-navbar-fixed-top">
-<header>
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-        <div class="container">
-            <div class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item" href="/">
-                        Home
-                    </a>
-                    <%-- Tutaj pozostałe linki, które chcemy mieć widoczne --%>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            Test...
-                        </a>
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                                Test link
-                            </a>
-                            <%-- Tutaj kolejne linki w menu dodatkowym --%>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="navbar=end">
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a class="button is-primary" href="/register">
-                                <strong>Rejestracja</strong>
-                            </a>
-                            <a class="button is-success" href="/login">
-                                <strong>Login</strong>
-                            </a>
-                            <sec:authorize access="isAuthenticated()">
-                            <a class="button is-primary" href="/user">
-                                <strong>Account</strong>
-                            </a>
-                                <form method="post" action="/logout">
-                                    <button class="button is-link" type="submit">Wyloguj</button>
-                                <sec:csrfInput/>
-                                </form>
-                            </sec:authorize>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-</header>
+<jsp:include page="header.jsp"/>
 <section class="section">
     <div class="container">
         <h1 class="title">
@@ -106,6 +61,7 @@
         </div>
     </div>
 </section>
-<jsp:include page="/WEB-INF/views/footer.jsp"/>
+
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

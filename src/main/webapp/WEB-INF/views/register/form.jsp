@@ -13,48 +13,13 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 <body class="has-navbar-fixed-top">
-<header>
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-        <div class="container">
-            <div class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item" href="/">
-                        Home
-                    </a>
-                    <%-- Tutaj pozostałe linki, które chcemy mieć widoczne --%>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            Test...
-                        </a>
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                                Test link
-                            </a>
-                            <%-- Tutaj kolejne linki w menu dodatkowym --%>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="navbar=end">
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a class="button is-primary" href="/register">
-                                <strong>Register</strong>
-                            </a>
-                            <a class="button is-success" href="/login">
-                                <strong>Login</strong>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-</header>
+<jsp:include page="/WEB-INF/views/header.jsp"/>
+
 <section class="section">
     <div class="container">
         <h1 class="title">
-            Zarejestruj się!
+            Register account
         </h1>
     </div>
 </section>

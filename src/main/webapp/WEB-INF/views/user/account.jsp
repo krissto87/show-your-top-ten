@@ -13,55 +13,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 <body class="has-navbar-fixed-top">
-<header>
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-        <div class="container">
-            <div class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item" href="/">
-                        Strona główna
-                    </a>
-                    <%-- Tutaj pozostałe linki, które chcemy mieć widoczne --%>
-
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            Więcej
-                        </a>
-
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                                Link do niczego
-                            </a>
-                            <%-- Tutaj kolejne linki w menu dodatkowym --%>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="navbar=end">
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a class="button is-primary" href="/register">
-                                <strong>Register</strong>
-                            </a>
-                            <a class="button is-success" href="/login">
-                                <strong>Login</strong>
-                            </a>
-                            <sec:authorize access="isAuthenticated()">
-                                <a class="button is-primary" href="/user">
-                                    <strong>Account</strong>
-                                </a>
-                                <form method="post" action="/logout">
-                                    <button class="button is-link" type="submit">Logout</button>
-                                    <sec:csrfInput/>
-                                </form>
-                            </sec:authorize>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-</header>
+<jsp:include page="/WEB-INF/views/header.jsp"/>
 <section class="hero is-bold is-medium">
     <div class="container">
         <div class="hero-body">
