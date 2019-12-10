@@ -3,6 +3,7 @@ package krissto87.showyourtopten.dtos;
 import lombok.Data;
 
 import javax.validation.constraints.*;
+import java.util.List;
 
 @Data
 public class RegistrationDataDTO {
