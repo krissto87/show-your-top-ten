@@ -3,10 +3,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <head>
-    <title>Show Your Top10 Page</title>
+    <title>Twoje konto</title>
 
     <meta name="viewport" content="width=device-width; initial-scale=1.0, maximum-scale=1.0"/>
-
     <%-- Linki do szablonów css trafią tutaj --%>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
 
@@ -20,17 +19,18 @@
             <div class="navbar-menu">
                 <div class="navbar-start">
                     <a class="navbar-item" href="/">
-                        Home
+                        Strona główna
                     </a>
                     <%-- Tutaj pozostałe linki, które chcemy mieć widoczne --%>
+
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
-                            More...
+                            Więcej
                         </a>
 
                         <div class="navbar-dropdown">
                             <a class="navbar-item">
-                                Some link
+                                Link do niczego
                             </a>
                             <%-- Tutaj kolejne linki w menu dodatkowym --%>
                         </div>
@@ -52,7 +52,7 @@
                                 </a>
                                 <form method="post" action="/logout">
                                     <button class="button is-link" type="submit">Logout</button>
-                                <sec:csrfInput/>
+                                    <sec:csrfInput/>
                                 </form>
                             </sec:authorize>
                         </div>
@@ -66,10 +66,10 @@
     <div class="container">
         <div class="hero-body">
             <h1 class="title">
-                INDEX BEZ ZALOGOWANIA
+                Spring Transitions
             </h1>
             <h2 class="subtitle">
-                Witaj w projekcie <strong>Spring Transitions</strong>.
+                STRONA UŻYTKOWNIKA PO ZALOGOWANIU <strong>Spring Transitions</strong>.
                 <br/>Znajdziesz tutaj mnóstwo przykładów w jaki sposób mogą być wdrażane kolejne
                 rozwinięcia aplikacji opartej na
                 frameworku Spring i Spring Boot
@@ -77,6 +77,7 @@
 
         </div>
     </div>
+    <sec:csrfInput/>
 </section>
 <jsp:include page="/WEB-INF/views/footer.jsp"/>
 </body>
