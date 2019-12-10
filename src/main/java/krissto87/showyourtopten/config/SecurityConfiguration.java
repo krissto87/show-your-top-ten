@@ -10,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import javax.sql.DataSource;
 
 @Configuration
+//@EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private final DataSource dataSource;
@@ -22,6 +23,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public SecurityConfiguration(DataSource dataSource) {
         this.dataSource = dataSource;
     }
+
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

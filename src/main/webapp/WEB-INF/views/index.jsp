@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <head>
-    <title>Welcome on Your top10 page</title>
+    <title>Show Your Top10 Page</title>
     <%-- Elementy dotyczące treści strony --%>
 <%--    <meta name="description"--%>
 <%--          content="Projekt Spring Transitions zawierający zbiór przekształceń projektów opartych na Spring Boot 2 do nowych wersji"/>--%>
