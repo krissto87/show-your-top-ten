@@ -6,7 +6,9 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 
@@ -30,4 +32,9 @@ public class User {
 
     @ManyToMany
     private Set<Role> roles = new HashSet<>();
+
+    @OneToMany
+    private List<ListPosition> movieList = new ArrayList<>();
+    @OneToMany
+    private List<ListPosition> serialList = new ArrayList<>();
 }
