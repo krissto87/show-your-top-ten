@@ -32,15 +32,10 @@
 
                 <div class="navbar=end">
                     <div class="navbar-item">
+                            <span class="navbar-item">
+                                <strong>Welcome username!</strong>
+                            </span>
                         <div class="buttons">
-                            <sec:authorize access="isAnonymous()">
-                            <a class="button is-primary" href="/register">
-                                <strong>Register</strong>
-                            </a>
-                            <a class="button is-success" href="/login">
-                                <strong>Login</strong>
-                            </a>
-                            </sec:authorize>
                             <sec:authorize access="isAuthenticated()">
                                 <a class="button is-primary" href="/user">
                                     <strong>Your account</strong>
