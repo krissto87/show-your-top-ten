@@ -8,8 +8,10 @@ import org.apache.catalina.mapper.Mapper;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.ModelMap;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -31,5 +33,22 @@ public class DefaultAdminService implements AdminService {
     @Override
     public List<Movie> findAll() {
         return movieRepository.findAll();
+    }
+
+    @Override
+    public Movie findById(Long id) {
+        Optional<Movie> result = movieRepository.findById(id);
+        Movie movie = result.get();
+        return movie ;
+    }
+
+    @Override
+    public void remove(Movie movie) {
+        movieRepository.delete(movie);
+    }
+
+    @Override
+    public void save(Movie movie) {
+        movieRepository.save(movie);
     }
 }

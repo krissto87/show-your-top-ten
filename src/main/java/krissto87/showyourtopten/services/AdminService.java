@@ -9,4 +9,10 @@ public interface AdminService {
     void addMovie(AddMovieDTO addMovieDTO);
 
     List<Movie> findAll();
+
+    Movie findById(Long id);
+
+    void remove(Movie movie);
+
+    void save(Movie movie);
 }

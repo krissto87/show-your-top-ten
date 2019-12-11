@@ -36,16 +36,17 @@
                             <td>${stat.count}</td>
                             <td>${movie.title}</td>
                             <td>${movie.type}</td>
+                            <td>${movie.director}</td>
                             <td>${movie.description}</td>
                             <td>
                                 <a class="button is-primary"
-                                   href="<c:url value='admin/movies/edit/${movie.id}'/>">
+                                   href="<c:url value='/admin/movies/edit/${movie.id}'/>">
                                 <strong>Edit</strong>
                                 </a>
                             </td>
                             <td>
                                 <a class="button is-link"
-                                   href="<c:url value='admin/movies/delete/${movie.id}'/>">
+                                   href="<c:url value='/admin/movies/delete/${movie.id}'/>">
                                     <strong>Delete</strong>
                                 </a>
                             </td>

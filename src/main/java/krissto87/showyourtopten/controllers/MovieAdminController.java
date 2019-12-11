@@ -6,10 +6,7 @@ import krissto87.showyourtopten.services.impl.DefaultAdminService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.Arrays;
@@ -54,4 +51,20 @@ public class MovieAdminController {
         model.addAttribute("movies", movies);
         return "admin/movies/list";
     }
+
+    @GetMapping("/edit/{id}")
+    public String prepareEditMovie(Model model, @PathVariable Long id) {
+        Movie movie = adminService.findById(id);
+        model.addAttribute("movie", movie);
+        return "admin/movies/edit";
+    }
+
+    @PostMapping("/edit/{id}")
+    public String processEditMovie(@ModelAttribute Movie movie, @PathVariable Long id) {
+        if (movie != null) {
+            adminService.save(movie);
+        }
+        return "redirect:/admin/movies/all";
+    }
+
 }
