@@ -6,13 +6,13 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Data
-public class AddMovieDTO {
+public class AddSerialDTO {
 
-    @NotBlank @Size(min = 2, max = 30)
+    @NotBlank
+    @Size(min = 2, max = 30)
     private String title;
     @NotBlank
     private String type;
-    private String director;
+    private String creator;
     private String description;
-
 }

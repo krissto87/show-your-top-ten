@@ -1,15 +1,16 @@
 package krissto87.showyourtopten.services.impl;
 
 import krissto87.showyourtopten.domain.entities.Movie;
+import krissto87.showyourtopten.domain.entities.Serial;
 import krissto87.showyourtopten.domain.repositories.MovieRepository;
+import krissto87.showyourtopten.domain.repositories.SerialRepository;
 import krissto87.showyourtopten.dtos.AddMovieDTO;
+import krissto87.showyourtopten.dtos.AddSerialDTO;
 import krissto87.showyourtopten.dtos.EditMovieDTO;
 import krissto87.showyourtopten.services.AdminService;
-import org.apache.catalina.mapper.Mapper;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.ui.ModelMap;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,9 +21,11 @@ public class DefaultAdminService implements AdminService {
 
     private ModelMapper mapper = new ModelMapper();
     private MovieRepository movieRepository;
+    private SerialRepository serialRepository;
 
-    public DefaultAdminService(MovieRepository movieRepository) {
+    public DefaultAdminService(MovieRepository movieRepository, SerialRepository serialRepository) {
         this.movieRepository = movieRepository;
+        this.serialRepository = serialRepository;
     }
 
     @Override
@@ -45,11 +48,6 @@ public class DefaultAdminService implements AdminService {
     }
 
     @Override
-    public void remove(Movie movie) {
-        movieRepository.delete(movie);
-    }
-
-    @Override
     public void save(EditMovieDTO movieDTO) {
         Movie movie = mapper.map(movieDTO, Movie.class);
         movieRepository.save(movie);
@@ -58,5 +56,11 @@ public class DefaultAdminService implements AdminService {
     @Override
     public void deleteById(Long id) {
         movieRepository.deleteById(id);
+    }
+
+    @Override
+    public void addSerial(AddSerialDTO addSerialDTO) {
+        Serial serial = mapper.map(addSerialDTO, Serial.class);
+        serialRepository.save(serial);
     }
 }

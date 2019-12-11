@@ -37,10 +37,10 @@
                         </a>
 
                         <div class="navbar-dropdown">
-                            <a href="" class="navbar-item">
+                            <a href="/admin/serials/add" class="navbar-item">
                                 Add serial to base
                             </a>
-                            <a href="" class="navbar-item">
+                            <a href="/admin/serials/all" class="navbar-item">
                                 Show details
                             </a>
                         </div>
