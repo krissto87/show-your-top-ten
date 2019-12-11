@@ -1,4 +1,5 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -33,12 +34,14 @@
                 <div class="navbar=end">
                     <div class="navbar-item">
                             <span class="navbar-item">
-                                <strong>Welcome username!</strong>
+                                <c:if test="${pageContext.request.userPrincipal.authenticated}">
+                                    <p><strong>Welcome ${pageContext.request.userPrincipal.name}!</strong></p>
+                                </c:if>
                             </span>
                         <div class="buttons">
                             <sec:authorize access="isAuthenticated()">
                                 <a class="button is-primary" href="/user">
-                                    <strong>Your account</strong>
+                                    <strong>User account</strong>
                                 </a>
                                 <form method="post" action="/logout">
                                     <button class="button is-link" type="submit">Logout</button>

@@ -22,24 +22,26 @@
                 <div class="column is-one-quarter">
                     <aside class="menu">
                         <p class="menu-label">
-                            General:
+                           <code> General:</code>
                         </p>
                         <ul class="menu-list">
                             <li><a href="#">Edit account</a></li>
                             <li><a href="#">Change password</a></li>
                         </ul>
                         <p class="menu-label">
-                            Your top10 movies
+                            <code>Your top10 movies:</code>
                         </p>
                         <ul class="menu-list">
+                            <li><a href="#">Add</a></li>
                             <li><a href="#">Details</a></li>
                             <li><a href="#">Edit list</a></li>
                             <li><a href="#">Delete list</a></li>
                         </ul>
                         <p class="menu-label">
-                            Your top10 serials
+                            <code>Your top10 serials:</code>
                         </p>
                         <ul class="menu-list">
+                            <li><a href="#">Add</a></li>
                             <li><a href="#">Details</a></li>
                             <li><a href="#" >Edit list</a></li>
                             <li><a href="#" >Delete list</a></li>
