@@ -51,4 +51,5 @@ public class DefaultAdminService implements AdminService {
     public void save(Movie movie) {
         movieRepository.save(movie);
     }
+
 }

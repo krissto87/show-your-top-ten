@@ -60,11 +60,25 @@ public class MovieAdminController {
     }
 
     @PostMapping("/edit/{id}")
-    public String processEditMovie(@ModelAttribute Movie movie, @PathVariable Long id) {
+    public String processEditMovie(@ModelAttribute @Valid Movie movie, BindingResult result,
+                                   @PathVariable Long id) {
+        if (result.hasErrors()) {
+            return "admin/movies/edit";
+        }
         if (movie != null) {
             adminService.save(movie);
         }
         return "redirect:/admin/movies/all";
     }
 
+
+
+
+
+    @GetMapping("/delete/{id}")
+    public String prepareDeleteMovie(Model model, @PathVariable Long id) {
+        Movie movie = adminService.findById(id);
+        model.addAttribute("movie", movie);
+        return "admin/movies/delete";
+    }
 }
