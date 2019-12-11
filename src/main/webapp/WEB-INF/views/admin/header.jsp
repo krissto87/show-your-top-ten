@@ -23,7 +23,7 @@
                         </a>
 
                         <div class="navbar-dropdown">
-                            <a class="navbar-item">
+                            <a href="/admin/movies/add" class="navbar-item">
                                 Add movie to base
                             </a>
                             <a class="navbar-item">
@@ -44,10 +44,9 @@
                         </a>
 
                         <div class="navbar-dropdown">
-                            <a class="navbar-item">
+                            <a href="#" class="navbar-item">
                                 Add serial to base
                             </a>
-                            <a class="navbar-item">
                                 Show details
                             </a>
                             <%-- Tutaj kolejne linki w menu dodatkowym --%>
