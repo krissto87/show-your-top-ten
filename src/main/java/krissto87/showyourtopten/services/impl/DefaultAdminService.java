@@ -3,6 +3,7 @@ package krissto87.showyourtopten.services.impl;
 import krissto87.showyourtopten.domain.entities.Movie;
 import krissto87.showyourtopten.domain.repositories.MovieRepository;
 import krissto87.showyourtopten.dtos.AddMovieDTO;
+import krissto87.showyourtopten.dtos.EditMovieDTO;
 import krissto87.showyourtopten.services.AdminService;
 import org.apache.catalina.mapper.Mapper;
 import org.modelmapper.ModelMapper;
@@ -17,6 +18,7 @@ import java.util.Optional;
 @Transactional
 public class DefaultAdminService implements AdminService {
 
+    private ModelMapper mapper = new ModelMapper();
     private MovieRepository movieRepository;
 
     public DefaultAdminService(MovieRepository movieRepository) {
@@ -25,7 +27,6 @@ public class DefaultAdminService implements AdminService {
 
     @Override
     public void addMovie(AddMovieDTO addMovieDTO) {
-        ModelMapper mapper = new ModelMapper();
         Movie movie = mapper.map(addMovieDTO, Movie.class);
         movieRepository.save(movie);
     }
@@ -36,10 +37,11 @@ public class DefaultAdminService implements AdminService {
     }
 
     @Override
-    public Movie findById(Long id) {
+    public EditMovieDTO findById(Long id) {
         Optional<Movie> result = movieRepository.findById(id);
         Movie movie = result.get();
-        return movie ;
+        EditMovieDTO movieDTO = mapper.map(movie, EditMovieDTO.class);
+        return movieDTO ;
     }
 
     @Override
@@ -48,8 +50,13 @@ public class DefaultAdminService implements AdminService {
     }
 
     @Override
-    public void save(Movie movie) {
+    public void save(EditMovieDTO movieDTO) {
+        Movie movie = mapper.map(movieDTO, Movie.class);
         movieRepository.save(movie);
     }
 
+    @Override
+    public void deleteById(Long id) {
+        movieRepository.deleteById(id);
+    }
 }
