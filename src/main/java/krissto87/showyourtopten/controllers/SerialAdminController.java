@@ -1,5 +1,7 @@
 package krissto87.showyourtopten.controllers;
 
+import krissto87.showyourtopten.domain.entities.Movie;
+import krissto87.showyourtopten.domain.entities.Serial;
 import krissto87.showyourtopten.dtos.AddSerialDTO;
 import krissto87.showyourtopten.services.impl.DefaultAdminService;
 import org.springframework.stereotype.Controller;
@@ -32,18 +34,25 @@ public class SerialAdminController {
     }
 
     @GetMapping("/add")
-    public String prepareAddMovie(Model model) {
+    public String prepareAddSerial(Model model) {
         model.addAttribute("serial", new AddSerialDTO());
         return "admin/serials/add";
     }
 
     @PostMapping("/add")
-    public String processAddMovie(@ModelAttribute("serial") @Valid AddSerialDTO serial,
+    public String processAddSerial(@ModelAttribute("serial") @Valid AddSerialDTO serial,
                                   BindingResult result) {
         if (result.hasErrors()) {
             return "admin/serials/add";
         }
         adminService.addSerial(serial);
         return "admin/account";
+    }
+
+    @GetMapping("/all")
+    public String prepareAllMoviePage(Model model) {
+        List<Serial> serials = adminService.findAllSerials();
+        model.addAttribute("serials", serials);
+        return "admin/serials/list";
     }
 }

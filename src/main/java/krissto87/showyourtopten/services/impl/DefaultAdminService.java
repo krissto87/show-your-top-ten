@@ -35,7 +35,7 @@ public class DefaultAdminService implements AdminService {
     }
 
     @Override
-    public List<Movie> findAll() {
+    public List<Movie> findAllMovies() {
         return movieRepository.findAll();
     }
 
@@ -62,5 +62,10 @@ public class DefaultAdminService implements AdminService {
     public void addSerial(AddSerialDTO addSerialDTO) {
         Serial serial = mapper.map(addSerialDTO, Serial.class);
         serialRepository.save(serial);
+    }
+
+    @Override
+    public List<Serial> findAllSerials() {
+        return serialRepository.findAll();
     }
 }

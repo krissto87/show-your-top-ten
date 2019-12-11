@@ -48,7 +48,7 @@ public class MovieAdminController {
 
     @GetMapping("/all")
     public String prepareAllMoviePage(Model model) {
-        List<Movie> movies = adminService.findAll();
+        List<Movie> movies = adminService.findAllMovies();
         model.addAttribute("movies", movies);
         return "admin/movies/list";
     }
