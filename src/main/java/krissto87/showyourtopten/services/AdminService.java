@@ -18,7 +18,7 @@ public interface AdminService {
 
     void save(EditMovieDTO movieDTO);
 
-    void deleteById(Long id);
+    void deleteMovieById(Long id);
 
     void addSerial(AddSerialDTO serial);
 
@@ -27,4 +27,6 @@ public interface AdminService {
     EditSerialDTO findSerialById(Long id);
 
     void save (EditSerialDTO serialDTO);
+
+    void deleteSerialById(Long id);
 }

@@ -72,4 +72,16 @@ public class SerialAdminController {
         }
         return "redirect:/admin/serials/all";
     }
+
+    @GetMapping("/delete/{id}")
+    public String prepareDeleteSerial(Model model, @PathVariable Long id) {
+        model.addAttribute("id", id);
+        return "admin/serials/delete";
+    }
+
+    @PostMapping("/delete/{id}")
+    public String processDeleteSerial(@PathVariable Long id) {
+        adminService.deleteSerialById(id);
+        return "redirect:/admin/serials/all";
+    }
 }

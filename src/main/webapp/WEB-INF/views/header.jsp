@@ -16,18 +16,6 @@
                         Home
                     </a>
                     <%-- Tutaj pozostałe linki, które chcemy mieć widoczne --%>
-                    <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link">
-                            More...
-                        </a>
-
-                        <div class="navbar-dropdown">
-                            <a class="navbar-item">
-                                Some link
-                            </a>
-                            <%-- Tutaj kolejne linki w menu dodatkowym --%>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="navbar=end">

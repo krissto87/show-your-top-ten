@@ -80,7 +80,7 @@ public class MovieAdminController {
 
     @PostMapping("/delete/{id}")
     public String processDeleteMovie(@PathVariable Long id) {
-        adminService.deleteById(id);
+        adminService.deleteMovieById(id);
         return "redirect:/admin/movies/all";
     }
 }

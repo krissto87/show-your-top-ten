@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Delete movie ${id}</title>
+    <title>Delete serial ${id}</title>
     <%-- Elementy dotyczące treści strony --%>
     <%-- Elementy dotyczące wyświetlania --%>
     <meta name="viewport" content="width=device-width; initial-scale=1.0, maximum-scale=1.0"/>
@@ -16,15 +16,15 @@
 <body class="has-navbar-fixed-top">
 <jsp:include page="/WEB-INF/views/admin/header.jsp"/>
 <div class="buttons">
-    <form method="get" action="/admin/movies/all">
-        <input class="button is-warning" type="submit" value="cancel"/>
-    </form><br>
+<form method="get" action="/admin/serials/all">
+    <input class="button is-warning" type="submit" value="cancel"/>
+</form><br>
 
-    <form method="post">
-        <input type="hidden" name="id" value="${id}"/>
-        <input class="button is-danger" type="submit" value="delete"/>
-        <sec:csrfInput/>
-    </form>
+<form method="post">
+    <input type="hidden" name="id" value="${id}"/>
+    <input class="button is-danger" type="submit" value="delete"/>
+    <sec:csrfInput/>
+</form>
 </div>
 </body>
 </html>

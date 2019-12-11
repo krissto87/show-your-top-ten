@@ -55,7 +55,7 @@ public class DefaultAdminService implements AdminService {
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteMovieById(Long id) {
         movieRepository.deleteById(id);
     }
 
@@ -82,5 +82,10 @@ public class DefaultAdminService implements AdminService {
     public void save(EditSerialDTO serialDTO) {
         Serial serial = mapper.map(serialDTO, Serial.class);
         serialRepository.save(serial);
+    }
+
+    @Override
+    public void deleteSerialById(Long id) {
+        serialRepository.deleteById(id);
     }
 }
