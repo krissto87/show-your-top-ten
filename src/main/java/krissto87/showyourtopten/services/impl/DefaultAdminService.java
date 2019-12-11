@@ -9,6 +9,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class DefaultAdminService implements AdminService {
@@ -24,5 +26,10 @@ public class DefaultAdminService implements AdminService {
         ModelMapper mapper = new ModelMapper();
         Movie movie = mapper.map(addMovieDTO, Movie.class);
         movieRepository.save(movie);
+    }
+
+    @Override
+    public List<Movie> findAll() {
+        return movieRepository.findAll();
     }
 }

@@ -26,15 +26,8 @@
                             <a href="/admin/movies/add" class="navbar-item">
                                 Add movie to base
                             </a>
-                            <a class="navbar-item">
+                            <a href="/admin/movies/all" class="navbar-item">
                                 Show details
-                            </a>
-                            <%-- Tutaj kolejne linki w menu dodatkowym --%>
-                            <a class="navbar-item">
-                                Movie edition
-                            </a>
-                            <a class="navbar-item">
-                                Movie delete
                             </a>
                         </div>
                     </div>
@@ -44,17 +37,11 @@
                         </a>
 
                         <div class="navbar-dropdown">
-                            <a href="#" class="navbar-item">
+                            <a href="" class="navbar-item">
                                 Add serial to base
                             </a>
+                            <a href="" class="navbar-item">
                                 Show details
-                            </a>
-                            <%-- Tutaj kolejne linki w menu dodatkowym --%>
-                            <a class="navbar-item">
-                                Movie edition
-                            </a>
-                            <a class="navbar-item">
-                                Movie delete
                             </a>
                         </div>
                     </div>

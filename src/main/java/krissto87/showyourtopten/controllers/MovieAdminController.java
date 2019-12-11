@@ -1,5 +1,6 @@
 package krissto87.showyourtopten.controllers;
 
+import krissto87.showyourtopten.domain.entities.Movie;
 import krissto87.showyourtopten.dtos.AddMovieDTO;
 import krissto87.showyourtopten.services.impl.DefaultAdminService;
 import org.springframework.stereotype.Controller;
@@ -45,5 +46,12 @@ public class MovieAdminController {
         }
         adminService.addMovie(movie);
         return "admin/account";
+    }
+
+    @GetMapping("/all")
+    public String prepareAllMoviePage(Model model) {
+        List<Movie> movies = adminService.findAll();
+        model.addAttribute("movies", movies);
+        return "admin/movies/list";
     }
 }
