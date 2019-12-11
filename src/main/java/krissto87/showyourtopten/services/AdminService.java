@@ -5,6 +5,7 @@ import krissto87.showyourtopten.domain.entities.Serial;
 import krissto87.showyourtopten.dtos.AddMovieDTO;
 import krissto87.showyourtopten.dtos.AddSerialDTO;
 import krissto87.showyourtopten.dtos.EditMovieDTO;
+import krissto87.showyourtopten.dtos.EditSerialDTO;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ public interface AdminService {
 
     List<Movie> findAllMovies();
 
-    EditMovieDTO findById(Long id);
+    EditMovieDTO findMovieById(Long id);
 
     void save(EditMovieDTO movieDTO);
 
@@ -22,4 +23,8 @@ public interface AdminService {
     void addSerial(AddSerialDTO serial);
 
     List<Serial> findAllSerials();
+
+    EditSerialDTO findSerialById(Long id);
+
+    void save (EditSerialDTO serialDTO);
 }

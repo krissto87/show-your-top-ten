@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit movie</title>
+    <title>Edit serial</title>
     <%-- Elementy dotyczące treści strony --%>
     <%-- Elementy dotyczące wyświetlania --%>
     <meta name="viewport" content="width=device-width; initial-scale=1.0, maximum-scale=1.0"/>
@@ -23,7 +23,7 @@
         <div class="columns">
             <div class="column"></div>
             <div class="column">
-                <form:form modelAttribute="movie" method="post">
+                <form:form modelAttribute="serial" method="post">
                     <form:hidden path="id"/>
                     <div class="field">
                         <label class="label">Title</label>
@@ -46,9 +46,9 @@
                         </div>
                     </div>
                     <div class="field">
-                        <label class="label">Director</label>
+                        <label class="label">Creator</label>
                         <div class="control">
-                            <form:input path="director" required="true"/><form:errors path="director"/>
+                            <form:input path="creator" required="true"/><form:errors path="creator"/>
                         </div>
                     </div>
                     <div class="field">

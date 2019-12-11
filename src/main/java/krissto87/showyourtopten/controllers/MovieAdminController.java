@@ -25,8 +25,8 @@ public class MovieAdminController {
 
     @ModelAttribute("types")
     public List<String> getTypes() {
-        String[] movieTypes = new String[]{"Action", "Adventure", "Comedy",
-                "Drama", "Fantasy", "Historical", "Crime", "Thriller"};
+        String[] movieTypes = new String[]{"Action", "Adventure", "Biographical", "Comedy",
+                "Drama", "Fantasy", "Historical", "Crime", "Thriller", "Sci-fi"};
         return Arrays.asList(movieTypes);
     }
 
@@ -55,7 +55,7 @@ public class MovieAdminController {
 
     @GetMapping("/edit/{id}")
     public String prepareEditMovie(Model model, @PathVariable Long id) {
-        EditMovieDTO movie = adminService.findById(id);
+        EditMovieDTO movie = adminService.findMovieById(id);
         model.addAttribute("movie", movie);
         return "admin/movies/edit";
     }
