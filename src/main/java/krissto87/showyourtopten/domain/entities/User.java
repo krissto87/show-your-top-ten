@@ -33,8 +33,8 @@ public class User {
     @ManyToMany
     private Set<Role> roles = new HashSet<>();
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<ListPosition> movieList = new ArrayList<>();
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<ListPosition> serialList = new ArrayList<>();
 }
