@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -55,6 +56,15 @@ public class DefaultUserService implements UserService {
 
         ListPosition listPosition = mapper.map(movieList, ListPosition.class);
         listPositionRepository.save(listPosition);
+    }
+
+    @Override
+    public List<Movie> findUserList() {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        User user = userRepository.getByUsername(username);
+        List<ListPosition> movieList = user.getMovieList();
+        return movieList.stream().map(ListPosition::getMovie).collect(Collectors.toList());
+
     }
 
     private void addListPosition(User user, Long movieId, Integer pos) {

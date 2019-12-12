@@ -9,4 +9,7 @@ public interface UserService {
     List<Movie> findAll();
 
     void addMovieList(AddMovieListDTO movieList);
+    
+
+    List<Movie> findUserList();
 }

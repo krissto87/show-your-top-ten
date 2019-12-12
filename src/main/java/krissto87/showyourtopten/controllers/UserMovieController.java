@@ -47,4 +47,11 @@ public class UserMovieController {
         userService.addMovieList(movieList);
         return "user/account";
     }
+
+    @GetMapping("/details")
+    public String prepareMyListMovie(Model model) {
+        List<Movie> userMovies = userService.findUserList();
+        model.addAttribute("userMovies", userMovies);
+        return "user/movies/details";
+    }
 }
