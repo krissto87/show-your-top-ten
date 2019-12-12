@@ -29,7 +29,6 @@
                             <th>Type:</th>
                             <th>Creator:</th>
                             <th>Description:</th>
-                            <th>Action:</th>
                         </tr>
                         <c:forEach items="${serials}" var="serial" varStatus="stat">
                             <tr>
@@ -37,7 +36,12 @@
                                 <td>${serial.title}</td>
                                 <td>${serial.type}</td>
                                 <td>${serial.creator}</td>
-                                <td>${serial.description}</td>
+                                <td>
+                                    <a class="button is-success is-rounded"
+                                       href="<c:url value='/admin/serials/description/${movie.id}'/>">
+                                        <strong>Details</strong>
+                                    </a>
+                                </td>
                                 <td>
                                     <a class="button is-primary"
                                        href="<c:url value='/admin/serials/edit/${serial.id}'/>">

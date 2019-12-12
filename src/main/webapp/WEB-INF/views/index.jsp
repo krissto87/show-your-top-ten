@@ -4,14 +4,18 @@
 <!DOCTYPE html>
 <head>
     <title>Show Your Top10</title>
-
     <meta name="viewport" content="width=device-width; initial-scale=1.0, maximum-scale=1.0"/>
-
     <%-- Linki do szablonów css trafią tutaj --%>
     <link rel="stylesheet" href="/webjars/bulma/0.7.5/css/bulma.min.css">
-
     <%-- Linki do skryptów js trafią tutaj --%>
     <script defer src="/webjars/font-awesome/5.10.1/js/all.min.js"></script>
+
+<%--    <style>--%>
+<%--        .hero {--%>
+<%--            background: url( /../webapp/media/images/film.jpg) center / cover;--%>
+<%--        }--%>
+<%--        @media (max-width: 1024px) {.hero {background: url(/../webapp/media/images/film.jpg) center / cover;}}--%>
+<%--    </style>--%>
 </head>
 <body class="has-navbar-fixed-top">
 <jsp:include page="header.jsp"/>

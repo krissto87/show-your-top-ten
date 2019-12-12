@@ -35,7 +35,7 @@
                     <div class="navbar-item">
                             <span class="navbar-item">
                                 <c:if test="${pageContext.request.userPrincipal.authenticated}">
-                                    <p><strong>Welcome ${pageContext.request.userPrincipal.name}!</strong></p>
+                                    <p class="list-line-height">Welcome ${pageContext.request.userPrincipal.name}!</p>
                                 </c:if>
                             </span>
                         <div class="buttons">

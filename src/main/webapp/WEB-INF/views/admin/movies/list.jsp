@@ -29,7 +29,6 @@
                             <th>Type:</th>
                             <th>Director:</th>
                             <th>Description:</th>
-                            <th>Action:</th>
                         </tr>
                         <c:forEach items="${movies}" var="movie" varStatus="stat">
                         <tr>
@@ -37,7 +36,12 @@
                             <td>${movie.title}</td>
                             <td>${movie.type}</td>
                             <td>${movie.director}</td>
-                            <td>${movie.description}</td>
+                            <td>
+                                <a class="button is-success is-rounded"
+                                   href="<c:url value='/admin/movies/description/${movie.id}'/>">
+                                    <strong>Details</strong>
+                                </a>
+                            </td>
                             <td>
                                 <a class="button is-primary"
                                    href="<c:url value='/admin/movies/edit/${movie.id}'/>">

@@ -1,4 +1,6 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -28,6 +30,11 @@
         <div class="columns">
             <div class="column"></div>
             <div class="column">
+                <c:if test="${param['error'] != null}">
+                    <div class="notification is-danger">
+                        <s:message code="pages.login.form.login-error"/>
+                    </div>
+                </c:if>
                 <form method="post" action="/login">
                     <div class="field">
                         <label class="label" for="username">Username</label>
