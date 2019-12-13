@@ -14,7 +14,7 @@
             <div class="navbar-menu">
                 <div class="navbar-start">
                     <a class="navbar-item" href="/">
-                        Home
+                        <strong>Home</strong>
                     </a>
                     <%-- Tutaj pozostałe linki, które chcemy mieć widoczne --%>
                 </div>
@@ -38,11 +38,11 @@
                                 </sec:authorize>
                                 <sec:authorize access="hasAnyRole('ADMIN')">
                                 <a class="button is-primary" href="/admin">
-                                    <strong>Admin account</strong>
+                                    <strong>${pageContext.request.userPrincipal.name} account</strong>
                                 </a>
                                 </sec:authorize>
                                 <form method="post" action="/logout">
-                                    <button class="button is-link" type="submit">Logout</button>
+                                    <button class="button is-link" type="submit"><strong>Logout</strong></button>
                                     <sec:csrfInput/>
                                 </form>
                             </sec:authorize>

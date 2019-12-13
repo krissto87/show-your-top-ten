@@ -14,34 +14,34 @@
             <div class="navbar-menu">
                 <div class="navbar-start">
                     <a class="navbar-item" href="/">
-                        Home
+                        <strong>Home</strong>
                     </a>
                     <%-- Tutaj pozostałe linki, które chcemy mieć widoczne --%>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
-                            Film base:
+                            <strong>Film base:</strong>
                         </a>
 
                         <div class="navbar-dropdown">
                             <a href="/admin/movies/add" class="navbar-item">
-                                Add movie to base
+                                <strong>Add movie to base</strong>
                             </a>
                             <a href="/admin/movies/all" class="navbar-item">
-                                Show movie base
+                                <strong>Show movie base</strong>
                             </a>
                         </div>
                     </div>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
-                            Serial base:
+                            <strong>Serial base:</strong>
                         </a>
 
                         <div class="navbar-dropdown">
                             <a href="/admin/serials/add" class="navbar-item">
-                                Add serial to base
+                                <strong>Add serial to base</strong>
                             </a>
                             <a href="/admin/serials/all" class="navbar-item">
-                                Show serial base
+                                <strong>Show serial base</strong>
                             </a>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                                     <strong>${pageContext.request.userPrincipal.name} account</strong>
                                 </a>
                                 <form method="post" action="/logout">
-                                    <button class="button is-link" type="submit">Logout</button>
+                                    <button class="button is-link" type="submit"><strong>Logout</strong></button>
                                     <sec:csrfInput/>
                                 </form>
                             </sec:authorize>
