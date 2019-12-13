@@ -35,6 +35,7 @@ public class SomeStarterClass implements ApplicationRunner {
         user.setUsername("admin");
         user.setEmail("admin@admin.pl");
         user.setPassword("{noop}abc");
+        user.setActive(true);
         userRepository.save(user);
     }
 }
