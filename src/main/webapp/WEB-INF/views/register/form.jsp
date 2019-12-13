@@ -53,7 +53,7 @@
                     <label class="label">Password</label>
                     <p class="control has-icons-left">
                         <form:input class="input" path="password" required="true" type="password"
-                                    placeholder="(min 4 a max 12 znaków)"/>
+                                    placeholder="(min 4, max 12 characters)"/>
                         <form:errors path="password"/>
                         <span class="icon is-small is-left">
             <i class="fas fa-lock"></i>
@@ -65,7 +65,7 @@
                     <label class="label">Re-password</label>
                     <p class="control has-icons-left">
                         <form:input class="input" path="rePassword" required="true" type="password"
-                                    placeholder="(min 4 a max 12 znaków)"/>
+                                    placeholder="(min 4, max 12 characters)"/>
                         <form:errors path="rePassword"/>
                         <span class="icon is-small is-left">
             <i class="fas fa-lock"></i>
@@ -77,19 +77,19 @@
                     <div class="control">
                         <label class="checkbox">
                             <form:checkbox path="termsAcceptance" required="true"
-                                           placeholder="Musisz zaakceptować aby zakończyć rejestracje"/>
+                                           placeholder=""/>
                             <form:errors path="termsAcceptance"/>
-                            Akceptuje <a href="#">warunki i zasady rejestracji</a>
+                            Accept <a href="#">registration terms and conditions</a>
                         </label>
                     </div>
                 </div>
 
                 <div class="field is-grouped">
                     <div class="control">
-                        <button class="button is-link">Zarejestruj się</button>
+                        <button class="button is-link">Register!</button>
                     </div>
                     <div class="control">
-                        <button class="button is-link is-light">Anuluj</button>
+                        <button class="button is-link is-light">Cancel</button>
                     </div>
                 </div>
                 <sec:csrfInput/>

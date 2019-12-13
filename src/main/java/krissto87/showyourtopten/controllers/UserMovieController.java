@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -53,5 +54,19 @@ public class UserMovieController {
         List<Movie> userMovies = userService.findUserList();
         model.addAttribute("userMovies", userMovies);
         return "user/movies/details";
+    }
+
+    @ModelAttribute("userMoviesList")
+    public List<Movie> getUserList(Model model) {
+        List<Movie> userMoviesList = userService.findUserList();
+       model.addAttribute("userMoviesList", userMoviesList);
+        return userMoviesList;
+    }
+
+    @GetMapping("/edit/")
+    public String prepareEditUserMovieList (Model model) {
+//        List<Movie> userMovies = userService.findUserList();
+//        model.addAttribute("userMovies", userMovies);
+        return "user/movies/edit";
     }
 }
