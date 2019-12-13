@@ -3,6 +3,7 @@ package krissto87.showyourtopten.controllers;
 import krissto87.showyourtopten.domain.entities.Movie;
 import krissto87.showyourtopten.dtos.AddMovieDTO;
 import krissto87.showyourtopten.dtos.EditMovieDTO;
+import krissto87.showyourtopten.dtos.EditSerialDTO;
 import krissto87.showyourtopten.services.impl.DefaultAdminService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -82,5 +83,12 @@ public class MovieAdminController {
     public String processDeleteMovie(@PathVariable Long id) {
         adminService.deleteMovieById(id);
         return "redirect:/admin/movies/all";
+    }
+
+    @GetMapping("/description/{id}")
+    public String movieDescriptionPage(Model model, @PathVariable Long id) {
+        EditMovieDTO movie = adminService.findMovieById(id);
+        model.addAttribute("movie", movie);
+        return "admin/movies/description";
     }
 }

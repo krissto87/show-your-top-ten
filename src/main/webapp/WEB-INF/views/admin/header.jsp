@@ -27,7 +27,7 @@
                                 Add movie to base
                             </a>
                             <a href="/admin/movies/all" class="navbar-item">
-                                Show details
+                                Show movie base
                             </a>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                                 Add serial to base
                             </a>
                             <a href="/admin/serials/all" class="navbar-item">
-                                Show details
+                                Show serial base
                             </a>
                         </div>
                     </div>
@@ -49,15 +49,10 @@
 
                 <div class="navbar=end">
                     <div class="navbar-item">
-                            <span class="navbar-item">
-                                <c:if test="${pageContext.request.userPrincipal.authenticated}">
-                                    <p><strong>Welcome ${pageContext.request.userPrincipal.name}!</strong></p>
-                                </c:if>
-                            </span>
                         <div class="buttons">
                             <sec:authorize access="isAuthenticated()">
                                 <a class="button is-primary" href="/admin">
-                                    <strong>Admin account</strong>
+                                    <strong>${pageContext.request.userPrincipal.name} account</strong>
                                 </a>
                                 <form method="post" action="/logout">
                                     <button class="button is-link" type="submit">Logout</button>

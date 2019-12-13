@@ -37,22 +37,28 @@
                             <td>${movie.type}</td>
                             <td>${movie.director}</td>
                             <td>
-                                <a class="button is-success is-rounded"
-                                   href="<c:url value='/admin/movies/description/${movie.id}'/>">
-                                    <strong>Details</strong>
-                                </a>
+                                <div class="buttons are-small">
+                                    <a class="button is-rounded"
+                                       href="<c:url value='/admin/movies/description/${movie.id}'/>">
+                                        <strong>Details</strong>
+                                    </a>
+                                </div>
                             </td>
                             <td>
-                                <a class="button is-primary"
-                                   href="<c:url value='/admin/movies/edit/${movie.id}'/>">
-                                <strong>Edit</strong>
-                                </a>
+                                <div class="buttons are-small">
+                                    <a class="button is-primary"
+                                       href="<c:url value='/admin/movies/edit/${movie.id}'/>">
+                                        <strong>Edit</strong>
+                                    </a>
+                                </div>
                             </td>
                             <td>
-                                <a class="button is-link"
-                                   href="<c:url value='/admin/movies/delete/${movie.id}'/>">
-                                    <strong>Delete</strong>
-                                </a>
+                                <div class="buttons are-small">
+                                    <a class="button is-link"
+                                       href="<c:url value='/admin/movies/delete/${movie.id}'/>">
+                                        <strong>Delete</strong>
+                                    </a>
+                                </div>
                             </td>
                         </tr>
                         </c:forEach>

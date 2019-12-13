@@ -37,22 +37,28 @@
                                 <td>${serial.type}</td>
                                 <td>${serial.creator}</td>
                                 <td>
-                                    <a class="button is-success is-rounded"
-                                       href="<c:url value='/admin/serials/description/${movie.id}'/>">
-                                        <strong>Details</strong>
-                                    </a>
+                                    <div class="buttons are-small">
+                                        <a class="button is-rounded"
+                                           href="<c:url value='/admin/serials/description/${serial.id}'/>">
+                                            <strong>Details</strong>
+                                        </a>
+                                    </div>
                                 </td>
                                 <td>
-                                    <a class="button is-primary"
-                                       href="<c:url value='/admin/serials/edit/${serial.id}'/>">
-                                        <strong>Edit</strong>
-                                    </a>
+                                    <div class="buttons are-small">
+                                        <a class="button is-primary"
+                                            href="<c:url value='/admin/serials/edit/${serial.id}'/>">
+                                            <strong>Edit</strong>
+                                        </a>
+                                    </div>
                                 </td>
                                 <td>
-                                    <a class="button is-link"
-                                       href="<c:url value='/admin/serials/delete/${serial.id}'/>">
-                                        <strong>Delete</strong>
-                                    </a>
+                                    <div class="buttons are-small">
+                                        <a class="button is-link"
+                                            href="<c:url value='/admin/serials/delete/${serial.id}'/>">
+                                            <strong>Delete</strong>
+                                        </a>
+                                    </div>
                                 </td>
                             </tr>
                         </c:forEach>

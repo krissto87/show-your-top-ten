@@ -1,5 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -27,41 +28,29 @@
     <div class="container">
         <div class="columns">
             <div class="column"></div>
-            <form:form modelAttribute="registrationData" method="post">
-                <div class="field">
-                    <label class="label">Login</label>
-                    <div class="control has-icons-left has-icons-right">
-                        <form:input class="input is-success" placeholder="login (min 3, max 12 znaków)"
-                                    path="username" required="true" type="text"/>
-                        <form:errors path="username"/>
-                        <span class="icon is-small is-left">
-      <i class="fas fa-user"></i>
-    </span>
-                        <span class="icon is-small is-right">
-      <i class="fas fa-check"></i>
-    </span>
+                <form:form modelAttribute="registrationData" method="post">
+                    <div class="field">
+                        <form:label path="username" cssClass="label"><s:message code="global.username"/></form:label>
+                        <div class="control has-icons-left">
+                            <s:message code="pages.register.form.helps.username" var="usernamePlaceholder"/>
+                            <form:input path="username" cssClass="input" required="true" placeholder="${usernamePlaceholder}"/>
+                            <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
+                            <form:errors path="username" element="p" cssClass="help is-danger"/>
+                        </div>
                     </div>
-                    <p class="help is-success">This username is available</p>
-                </div>
+                    <div class="field">
+                        <form:label path="email" cssClass="label"><s:message code="global.email"/></form:label>
+                        <div class="control has-icons-left">
+                            <s:message code="pages.register.form.helps.email" var="emailPlaceholder"/>
+                            <form:input path="email" cssClass="input" required="true" placeholder="${emailPlaceholder}"/>
+                            <span class="icon is-small is-left"><i
+                                    class="fas fa-envelope"></i></span>
+                            <form:errors path="email" element="p" cssClass="help is-danger"/>
+                        </div>
+                    </div>
 
                 <div class="field">
-                    <label class="label">Email</label>
-                    <div class="control has-icons-left has-icons-right">
-                        <form:input class="input is-danger" type="email" placeholder="example@example.com"
-                                    path="email" required="true"/>
-                        <form:errors path="email"/>
-                        <span class="icon is-small is-left">
-      <i class="fas fa-envelope"></i>
-    </span>
-                        <span class="icon is-small is-right">
-      <i class="fas fa-exclamation-triangle"></i>
-    </span>
-                    </div>
-                    <p class="help is-danger">This email is invalid</p>
-                </div>
-
-                <div class="field">
-                    <label class="label">Hasło</label>
+                    <label class="label">Password</label>
                     <p class="control has-icons-left">
                         <form:input class="input" path="password" required="true" type="password"
                                     placeholder="(min 4 a max 12 znaków)"/>
@@ -73,7 +62,7 @@
                 </div>
 
                 <div class="field">
-                    <label class="label">Powtórz hasło</label>
+                    <label class="label">Re-password</label>
                     <p class="control has-icons-left">
                         <form:input class="input" path="rePassword" required="true" type="password"
                                     placeholder="(min 4 a max 12 znaków)"/>

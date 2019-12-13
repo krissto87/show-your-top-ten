@@ -3,7 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <head>
-    <title>Twoje konto</title>
+    <title>Description movie ${movie.id}</title>
 
     <meta name="viewport" content="width=device-width; initial-scale=1.0, maximum-scale=1.0"/>
     <%-- Linki do szablonów css trafią tutaj --%>
@@ -16,29 +16,34 @@
 
 <section class="hero is-bold is-medium">
     <section class="section">
-        <div class="container">
-            <div class="columns is-mobile is-multiline is-centered">
-                <div class="column is-narrow">
-                    <p class="bd-notification is-primary">
-                        Strona główna admina w budownie ;-)
-                    </p>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
+                <div class="columns is-mobile">
+                    <div class="column is-half is-offset-one-quarter">
+                        <table class="table">
+                            <tr>
+                                <th>Title:</th>
+                                <th>Description:</th>
+                            </tr>
+                            <tr>
+                                <td>${movie.title}</td>
+                                <td>${movie.description}</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
-            </div>
-        </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
     </section>
 
     <sec:csrfInput/>

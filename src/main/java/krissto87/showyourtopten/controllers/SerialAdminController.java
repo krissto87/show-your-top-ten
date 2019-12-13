@@ -84,4 +84,11 @@ public class SerialAdminController {
         adminService.deleteSerialById(id);
         return "redirect:/admin/serials/all";
     }
+
+    @GetMapping("/description/{id}")
+    public String serialDescriptionPage(Model model, @PathVariable Long id) {
+        EditSerialDTO serial = adminService.findSerialById(id);
+        model.addAttribute("serial", serial);
+        return "admin/serials/description";
+    }
 }
