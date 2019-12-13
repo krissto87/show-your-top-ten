@@ -31,11 +31,8 @@ public class SomeStarterClass implements ApplicationRunner {
         userRol2.setId(2L);
         userRol2.setName("ROLE_ADMIN");
         roleRepository.save(userRol2);
-        User user = new User();
-        user.setUsername("admin");
-        user.setEmail("admin@admin.pl");
-        user.setPassword("{noop}abc");
-        user.setActive(true);
-        userRepository.save(user);
+
+        userRepository.createAdmin();
+        userRepository.makeAdminAdmin();
     }
 }
