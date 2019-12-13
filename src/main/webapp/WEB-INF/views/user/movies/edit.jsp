@@ -1,5 +1,6 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
@@ -16,14 +17,15 @@
 </head>
 
 <body class="has-navbar-fixed-top">
-<jsp:include page="/WEB-INF/views/admin/header.jsp"/>
+<jsp:include page="/WEB-INF/views/user/header.jsp"/>
 
 <section class="section">
     <div class="container">
         <div class="columns">
             <div class="column"></div>
             <div class="column">
-                <form:form modelAttribute="userMovies" method="post">
+                <form:form modelAttribute="movieList" method="post">
+                    <form:hidden path="id"/>
                     <div class="field">
                         <label class="label">First place</label>
                         <div class="control">
@@ -87,7 +89,7 @@
                     </div>
                     <div class="field">
                         <div class="control">
-                            <form:button class="button is-success is-link" type="submit">Add list</form:button>
+                            <form:button class="button is-success is-link" type="submit">Edit list</form:button>
                         </div>
                     </div>
                     <sec:csrfInput/>

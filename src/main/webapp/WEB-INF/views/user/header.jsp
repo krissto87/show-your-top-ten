@@ -16,6 +16,9 @@
                     <a class="navbar-item" href="/">
                         <strong>Home</strong>
                     </a>
+                    <a class="navbar-item" href="/user">
+                        <strong>Main menu</strong>
+                    </a>
                     <%-- Tutaj pozostałe linki, które chcemy mieć widoczne --%>
                 </div>
 

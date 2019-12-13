@@ -33,8 +33,8 @@
                         <ul class="list-line-height">
                             <li><a href="/user/movies/add">Add</a></li>
                             <li><a href="/user/movies/details">Details</a></li>
-                            <li><a href="/user/movies/editlist">Edit list</a></li>
-                            <li><a href="/user/movies/deletelist">Delete list</a></li>
+                            <li><a href="/user/movies/edit">Edit list</a></li>
+                            <li><a href="/user/movies/delete">Delete list</a></li>
                         </ul>
                         <p class="menu-label">
                             <code class="html">Your top10 serials:</code>
@@ -42,8 +42,8 @@
                         <ul class="list-line-height">
                             <li><a href="/user/serials/add">Add</a></li>
                             <li><a href="/user/serials/details">Details</a></li>
-                            <li><a href="/user/serials/editlist">Edit list</a></li>
-                            <li><a href="/user/serials/deletelist">Delete list</a></li>
+                            <li><a href="/user/serials/edit">Edit list</a></li>
+                            <li><a href="/user/serials/delete">Delete list</a></li>
                         </ul>
                     </aside>
                 </div>
