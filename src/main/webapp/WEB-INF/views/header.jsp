@@ -23,23 +23,23 @@
                     <div class="navbar-item">
                         <div class="buttons">
                             <sec:authorize access="isAnonymous()">
-                            <a class="button is-primary" href="/register">
-                                <strong>Register</strong>
-                            </a>
-                            <a class="button is-success" href="/login">
-                                <strong>Login</strong>
-                            </a>
+                                <a class="button is-primary" href="/register">
+                                    <strong>Register</strong>
+                                </a>
+                                <a class="button is-success" href="/login">
+                                    <strong>Login</strong>
+                                </a>
                             </sec:authorize>
                             <sec:authorize access="isAuthenticated()">
                                 <sec:authorize access="hasAnyRole('USER')">
-                                <a class="button is-primary" href="/user">
-                                    <strong>${pageContext.request.userPrincipal.name} account</strong>
-                                </a>
+                                    <a class="button is-primary" href="/user">
+                                        <strong>${pageContext.request.userPrincipal.name} account</strong>
+                                    </a>
                                 </sec:authorize>
                                 <sec:authorize access="hasAnyRole('ADMIN')">
-                                <a class="button is-primary" href="/admin">
-                                    <strong>${pageContext.request.userPrincipal.name} account</strong>
-                                </a>
+                                    <a class="button is-primary" href="/admin">
+                                        <strong>${pageContext.request.userPrincipal.name} account</strong>
+                                    </a>
                                 </sec:authorize>
                                 <form method="post" action="/logout">
                                     <button class="button is-link" type="submit"><strong>Logout</strong></button>

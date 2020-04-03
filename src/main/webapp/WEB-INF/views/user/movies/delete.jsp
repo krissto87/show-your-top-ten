@@ -18,7 +18,8 @@
 <div class="buttons">
     <form method="get" action="/user">
         <input class="button is-warning" type="submit" value="cancel"/>
-    </form><br>
+    </form>
+    <br>
 
     <form method="post">
         <input class="button is-danger" type="submit" value="delete"/>

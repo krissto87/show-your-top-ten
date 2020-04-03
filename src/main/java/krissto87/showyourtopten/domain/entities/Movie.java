@@ -9,8 +9,10 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "movies")
-@Getter @Setter
-@ToString @EqualsAndHashCode(of = "id")
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode(of = "id")
 public class Movie {
 
     @Id

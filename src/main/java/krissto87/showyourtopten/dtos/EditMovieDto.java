@@ -6,7 +6,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Data
-public class EditMovieDTO {
+public class EditMovieDto {
 
     private Long id;
     @NotBlank

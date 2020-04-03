@@ -10,7 +10,8 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "list_position")
-@Getter @Setter
+@Getter
+@Setter
 @EqualsAndHashCode(of = "id")
 public class ListPosition {
 

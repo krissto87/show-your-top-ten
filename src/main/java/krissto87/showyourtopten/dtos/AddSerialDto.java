@@ -6,9 +6,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Data
-public class EditSerialDTO {
+public class AddSerialDto {
 
-    private Long id;
     @NotBlank
     @Size(min = 2, max = 30)
     private String title;

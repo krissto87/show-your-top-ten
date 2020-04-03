@@ -11,7 +11,7 @@ import java.security.Principal;
 public class AdminController {
 
     @GetMapping
-    public String prepareAdminAccountPage () {
+    public String prepareAdminAccountPage() {
         return "admin/account";
     }
 }

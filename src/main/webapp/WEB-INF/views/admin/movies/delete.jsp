@@ -18,7 +18,8 @@
 <div class="buttons">
     <form method="get" action="/admin/movies/all">
         <input class="button is-warning" type="submit" value="cancel"/>
-    </form><br>
+    </form>
+    <br>
 
     <form method="post">
         <input type="hidden" name="id" value="${id}"/>

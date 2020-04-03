@@ -16,34 +16,34 @@
 
 <section class="hero is-bold is-medium">
     <section class="section">
-                <div class="columns is-mobile">
-                    <div class="column is-half is-offset-one-quarter">
-                        <table class="table">
-                            <tr>
-                                <th>Title:</th>
-                                <th>Description:</th>
-                            </tr>
-                            <tr>
-                                <td>${serial.title}</td>
-                                <td>${serial.description}</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
+        <div class="columns is-mobile">
+            <div class="column is-half is-offset-one-quarter">
+                <table class="table">
+                    <tr>
+                        <th>Title:</th>
+                        <th>Description:</th>
+                    </tr>
+                    <tr>
+                        <td>${serial.title}</td>
+                        <td>${serial.description}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </section>
 
     <sec:csrfInput/>

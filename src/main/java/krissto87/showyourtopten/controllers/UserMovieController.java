@@ -1,9 +1,9 @@
 package krissto87.showyourtopten.controllers;
 
 import krissto87.showyourtopten.domain.entities.Movie;
-import krissto87.showyourtopten.dtos.AddMovieListDTO;
-import krissto87.showyourtopten.dtos.EditMovieListDTO;
-import krissto87.showyourtopten.services.impl.DefaultUserService;
+import krissto87.showyourtopten.dtos.AddMovieListDto;
+import krissto87.showyourtopten.dtos.EditMovieListDto;
+import krissto87.showyourtopten.services.impl.UserServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,9 +16,9 @@ import java.util.List;
 @RequestMapping("user/movies")
 public class UserMovieController {
 
-    private final DefaultUserService userService;
+    private final UserServiceImpl userService;
 
-    public UserMovieController(DefaultUserService userService) {
+    public UserMovieController(UserServiceImpl userService) {
         this.userService = userService;
     }
 
@@ -32,12 +32,12 @@ public class UserMovieController {
 
     @GetMapping("/add")
     public String prepareAddUserMovieList(Model model) {
-        model.addAttribute("movieList", new AddMovieListDTO());
+        model.addAttribute("movieList", new AddMovieListDto());
         return "user/movies/add";
     }
 
     @PostMapping("/add")
-    public String processAddUserMovieList(@ModelAttribute("movieList") @Valid AddMovieListDTO movieList,
+    public String processAddUserMovieList(@ModelAttribute("movieList") @Valid AddMovieListDto movieList,
                                           BindingResult result) {
         if (result.hasErrors()) {
             return "user/movies/add";
@@ -55,14 +55,14 @@ public class UserMovieController {
 
     @GetMapping("/edit")
     public String prepareEditUserMovieList(Model model) {
-        EditMovieListDTO movieList = userService.getMovieList();
+        EditMovieListDto movieList = userService.getMovieList();
         model.addAttribute("movieList", movieList);
         return "user/movies/edit";
     }
 
     @PostMapping("/edit")
     public String processEditUserMovieList(@ModelAttribute("movieList")
-                                           @Valid EditMovieListDTO movieList, BindingResult result) {
+                                           @Valid EditMovieListDto movieList, BindingResult result) {
         if (result.hasErrors()) {
             return "user/movies/edit";
         }

@@ -56,40 +56,40 @@
                     </div>
 
                     <div class="field">
-                            <label class="label">Sixth place</label>
-                            <div class="control">
-                                <form:select path="sixth" items="${movies}" itemLabel="title" itemValue="id"/>
-                            </div>
+                        <label class="label">Sixth place</label>
+                        <div class="control">
+                            <form:select path="sixth" items="${movies}" itemLabel="title" itemValue="id"/>
                         </div>
-                        <div class="field">
-                            <label class="label">Seventh place</label>
-                            <div class="control">
-                                <form:select path="seventh" items="${movies}" itemLabel="title" itemValue="id"/>
-                            </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Seventh place</label>
+                        <div class="control">
+                            <form:select path="seventh" items="${movies}" itemLabel="title" itemValue="id"/>
                         </div>
-                        <div class="field">
-                            <label class="label">Eighth place</label>
-                            <div class="control">
-                                <form:select path="eight" items="${movies}" itemLabel="title" itemValue="id"/>
-                            </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Eighth place</label>
+                        <div class="control">
+                            <form:select path="eight" items="${movies}" itemLabel="title" itemValue="id"/>
                         </div>
-                        <div class="field">
-                            <label class="label">Ninth place</label>
-                            <div class="control">
-                                <form:select path="ninth" items="${movies}" itemLabel="title" itemValue="id"/>
-                            </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Ninth place</label>
+                        <div class="control">
+                            <form:select path="ninth" items="${movies}" itemLabel="title" itemValue="id"/>
                         </div>
-                        <div class="field">
-                            <label class="label">Tenth place</label>
-                            <div class="control">
-                                <form:select path="tenth" items="${movies}" itemLabel="title" itemValue="id"/>
-                            </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Tenth place</label>
+                        <div class="control">
+                            <form:select path="tenth" items="${movies}" itemLabel="title" itemValue="id"/>
                         </div>
-                        <div class="field">
-                            <div class="control">
-                                <form:button class="button is-success is-link" type="submit">Add list</form:button>
-                            </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <form:button class="button is-success is-link" type="submit">Add list</form:button>
                         </div>
+                    </div>
                     <sec:csrfInput/>
                 </form:form>
             </div>

@@ -18,12 +18,12 @@
 <body class="has-navbar-fixed-top">
 <jsp:include page="/WEB-INF/views/admin/header.jsp"/>
 
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column"></div>
-                <div class="column">
-                    <form:form modelAttribute="movie" method="post">
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column"></div>
+            <div class="column">
+                <form:form modelAttribute="movie" method="post">
                     <div class="field">
                         <label class="label">Title</label>
                         <div class="control">
@@ -56,11 +56,11 @@
                         </div>
                     </div>
                     <sec:csrfInput/>
-                    </form:form>
-                </div>
+                </form:form>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 <jsp:include page="/WEB-INF/views/footer.jsp"/>
 </body>
 </html>

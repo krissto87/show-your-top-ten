@@ -1,21 +1,21 @@
 package krissto87.showyourtopten.services;
 
 import krissto87.showyourtopten.domain.entities.Movie;
-import krissto87.showyourtopten.dtos.AddMovieListDTO;
-import krissto87.showyourtopten.dtos.EditMovieListDTO;
+import krissto87.showyourtopten.dtos.AddMovieListDto;
+import krissto87.showyourtopten.dtos.EditMovieListDto;
 
 import java.util.List;
 
 public interface UserService {
     List<Movie> findAll();
 
-    void addMovieList(AddMovieListDTO movieList);
+    void addMovieList(AddMovieListDto movieList);
 
     List<Movie> findUserList();
 
-    EditMovieListDTO getMovieList();
+    EditMovieListDto getMovieList();
 
-    void save(EditMovieListDTO movieList);
+    void save(EditMovieListDto movieList);
 
     void deleteUserList();
 }

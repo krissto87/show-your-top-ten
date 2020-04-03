@@ -1,6 +1,6 @@
 package krissto87.showyourtopten.controllers;
 
-import krissto87.showyourtopten.dtos.RegistrationDataDTO;
+import krissto87.showyourtopten.dtos.RegistrationDataDto;
 import krissto87.showyourtopten.services.RegistrationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,13 +24,13 @@ public class RegistrationController {
 
     @GetMapping
     public String getRegistrationPage(Model model) {
-        model.addAttribute("registrationData", new RegistrationDataDTO());
+        model.addAttribute("registrationData", new RegistrationDataDto());
         return "register/form";
     }
 
     @PostMapping
     public String processRegistrationPage(@ModelAttribute("registrationData")
-                                              @Valid RegistrationDataDTO registrationData, BindingResult results) {
+                                          @Valid RegistrationDataDto registrationData, BindingResult results) {
         if (results.hasErrors()) {
             return "register/form";
         }

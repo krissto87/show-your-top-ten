@@ -21,7 +21,7 @@
                 <div class="column is-one-fifth">
                     <aside class="menu">
                         <p class="menu-label">
-                           <code class="html"> General:</code>
+                            <code class="html"> General:</code>
                         </p>
                         <ul class="list-line-height">
                             <li><a href="#">Edit account</a></li>

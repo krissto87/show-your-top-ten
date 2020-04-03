@@ -47,7 +47,7 @@
                                 <td>
                                     <div class="buttons are-small">
                                         <a class="button is-primary"
-                                            href="<c:url value='/admin/serials/edit/${serial.id}'/>">
+                                           href="<c:url value='/admin/serials/edit/${serial.id}'/>">
                                             <strong>Edit</strong>
                                         </a>
                                     </div>
@@ -55,7 +55,7 @@
                                 <td>
                                     <div class="buttons are-small">
                                         <a class="button is-link"
-                                            href="<c:url value='/admin/serials/delete/${serial.id}'/>">
+                                           href="<c:url value='/admin/serials/delete/${serial.id}'/>">
                                             <strong>Delete</strong>
                                         </a>
                                     </div>

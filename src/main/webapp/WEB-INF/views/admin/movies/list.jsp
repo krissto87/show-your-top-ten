@@ -31,36 +31,36 @@
                             <th>Description:</th>
                         </tr>
                         <c:forEach items="${movies}" var="movie" varStatus="stat">
-                        <tr>
-                            <td>${stat.count}</td>
-                            <td>${movie.title}</td>
-                            <td>${movie.type}</td>
-                            <td>${movie.director}</td>
-                            <td>
-                                <div class="buttons are-small">
-                                    <a class="button is-rounded"
-                                       href="<c:url value='/admin/movies/description/${movie.id}'/>">
-                                        <strong>Details</strong>
-                                    </a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="buttons are-small">
-                                    <a class="button is-primary"
-                                       href="<c:url value='/admin/movies/edit/${movie.id}'/>">
-                                        <strong>Edit</strong>
-                                    </a>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="buttons are-small">
-                                    <a class="button is-link"
-                                       href="<c:url value='/admin/movies/delete/${movie.id}'/>">
-                                        <strong>Delete</strong>
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>${stat.count}</td>
+                                <td>${movie.title}</td>
+                                <td>${movie.type}</td>
+                                <td>${movie.director}</td>
+                                <td>
+                                    <div class="buttons are-small">
+                                        <a class="button is-rounded"
+                                           href="<c:url value='/admin/movies/description/${movie.id}'/>">
+                                            <strong>Details</strong>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="buttons are-small">
+                                        <a class="button is-primary"
+                                           href="<c:url value='/admin/movies/edit/${movie.id}'/>">
+                                            <strong>Edit</strong>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="buttons are-small">
+                                        <a class="button is-link"
+                                           href="<c:url value='/admin/movies/delete/${movie.id}'/>">
+                                            <strong>Delete</strong>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
                         </c:forEach>
                     </table>
                 </div>
@@ -68,6 +68,6 @@
         </div>
     </section>
 
-<jsp:include page="/WEB-INF/views/footer.jsp"/>
+    <jsp:include page="/WEB-INF/views/footer.jsp"/>
 </body>
 </html>

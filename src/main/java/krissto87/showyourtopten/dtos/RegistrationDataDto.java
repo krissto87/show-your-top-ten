@@ -6,16 +6,21 @@ import javax.validation.constraints.*;
 import java.util.List;
 
 @Data
-public class RegistrationDataDTO {
+public class RegistrationDataDto {
 
-    @NotBlank @Size(min = 3, max = 12)
+    @NotBlank
+    @Size(min = 3, max = 12)
     private String username;
-    @NotBlank @Email
+    @NotBlank
+    @Email
     private String email;
-    @NotBlank @Size(min = 4, max = 12)
+    @NotBlank
+    @Size(min = 4, max = 12)
     private String password;
-    @NotBlank @Size(min = 4, max = 12)
+    @NotBlank
+    @Size(min = 4, max = 12)
     private String rePassword;
-    @NotNull @AssertTrue
+    @NotNull
+    @AssertTrue
     private Boolean termsAcceptance;
 }

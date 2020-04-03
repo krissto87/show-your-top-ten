@@ -4,10 +4,10 @@ import krissto87.showyourtopten.domain.entities.Movie;
 import krissto87.showyourtopten.domain.entities.Serial;
 import krissto87.showyourtopten.domain.repositories.MovieRepository;
 import krissto87.showyourtopten.domain.repositories.SerialRepository;
-import krissto87.showyourtopten.dtos.AddMovieDTO;
-import krissto87.showyourtopten.dtos.AddSerialDTO;
-import krissto87.showyourtopten.dtos.EditMovieDTO;
-import krissto87.showyourtopten.dtos.EditSerialDTO;
+import krissto87.showyourtopten.dtos.AddMovieDto;
+import krissto87.showyourtopten.dtos.AddSerialDto;
+import krissto87.showyourtopten.dtos.EditMovieDto;
+import krissto87.showyourtopten.dtos.EditSerialDto;
 import krissto87.showyourtopten.services.AdminService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
@@ -18,19 +18,19 @@ import java.util.Optional;
 
 @Service
 @Transactional
-public class DefaultAdminService implements AdminService {
+public class AdminServiceImpl implements AdminService {
 
     private ModelMapper mapper = new ModelMapper();
     private MovieRepository movieRepository;
     private SerialRepository serialRepository;
 
-    public DefaultAdminService(MovieRepository movieRepository, SerialRepository serialRepository) {
+    public AdminServiceImpl(MovieRepository movieRepository, SerialRepository serialRepository) {
         this.movieRepository = movieRepository;
         this.serialRepository = serialRepository;
     }
 
     @Override
-    public void addMovie(AddMovieDTO addMovieDTO) {
+    public void addMovie(AddMovieDto addMovieDTO) {
         Movie movie = mapper.map(addMovieDTO, Movie.class);
         movieRepository.save(movie);
     }
@@ -41,15 +41,15 @@ public class DefaultAdminService implements AdminService {
     }
 
     @Override
-    public EditMovieDTO findMovieById(Long id) {
+    public EditMovieDto findMovieById(Long id) {
         Optional<Movie> result = movieRepository.findById(id);
         Movie movie = result.get();
-        EditMovieDTO movieDTO = mapper.map(movie, EditMovieDTO.class);
-        return movieDTO ;
+        EditMovieDto movieDTO = mapper.map(movie, EditMovieDto.class);
+        return movieDTO;
     }
 
     @Override
-    public void save(EditMovieDTO movieDTO) {
+    public void save(EditMovieDto movieDTO) {
         Movie movie = mapper.map(movieDTO, Movie.class);
         movieRepository.save(movie);
     }
@@ -60,7 +60,7 @@ public class DefaultAdminService implements AdminService {
     }
 
     @Override
-    public void addSerial(AddSerialDTO addSerialDTO) {
+    public void addSerial(AddSerialDto addSerialDTO) {
         Serial serial = mapper.map(addSerialDTO, Serial.class);
         serialRepository.save(serial);
     }
@@ -71,15 +71,15 @@ public class DefaultAdminService implements AdminService {
     }
 
     @Override
-    public EditSerialDTO findSerialById(Long id) {
+    public EditSerialDto findSerialById(Long id) {
         Optional<Serial> result = serialRepository.findById(id);
         Serial serial = result.get();
-        EditSerialDTO serialDTO = mapper.map(serial, EditSerialDTO.class);
-        return serialDTO ;
+        EditSerialDto serialDTO = mapper.map(serial, EditSerialDto.class);
+        return serialDTO;
     }
 
     @Override
-    public void save(EditSerialDTO serialDTO) {
+    public void save(EditSerialDto serialDTO) {
         Serial serial = mapper.map(serialDTO, Serial.class);
         serialRepository.save(serial);
     }

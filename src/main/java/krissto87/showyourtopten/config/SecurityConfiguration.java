@@ -53,16 +53,16 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin", "/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
-            .formLogin()
+                .formLogin()
                 .loginPage("/login")
                 .usernameParameter("username")
                 .passwordParameter("password")
                 .defaultSuccessUrl("/")
                 .and()
-            .logout()
+                .logout()
                 .logoutUrl("/logout")
                 .logoutSuccessUrl("/")
                 .and()
-            .csrf();
+                .csrf();
     }
 }

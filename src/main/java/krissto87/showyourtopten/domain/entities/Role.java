@@ -9,13 +9,14 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "roles")
-@Getter @Setter
-@ToString @EqualsAndHashCode(of = "id")
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode(of = "id")
 public class Role {
 
     @Id
     private Long id;
     @Column(nullable = false, unique = true)
     private String name;
-
 }

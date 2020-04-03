@@ -6,8 +6,8 @@ import krissto87.showyourtopten.domain.entities.User;
 import krissto87.showyourtopten.domain.repositories.ListPositionRepository;
 import krissto87.showyourtopten.domain.repositories.MovieRepository;
 import krissto87.showyourtopten.domain.repositories.UserRepository;
-import krissto87.showyourtopten.dtos.AddMovieListDTO;
-import krissto87.showyourtopten.dtos.EditMovieListDTO;
+import krissto87.showyourtopten.dtos.AddMovieListDto;
+import krissto87.showyourtopten.dtos.EditMovieListDto;
 import krissto87.showyourtopten.services.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -19,14 +19,14 @@ import java.util.stream.Collectors;
 
 @Service
 @Transactional
-public class DefaultUserService implements UserService {
+public class UserServiceImpl implements UserService {
 
     private ModelMapper mapper = new ModelMapper();
     private MovieRepository movieRepository;
     private UserRepository userRepository;
     private ListPositionRepository listPositionRepository;
 
-    public DefaultUserService(MovieRepository movieRepository, UserRepository userRepository, ListPositionRepository listPositionRepository) {
+    public UserServiceImpl(MovieRepository movieRepository, UserRepository userRepository, ListPositionRepository listPositionRepository) {
         this.movieRepository = movieRepository;
         this.userRepository = userRepository;
         this.listPositionRepository = listPositionRepository;
@@ -39,7 +39,7 @@ public class DefaultUserService implements UserService {
     }
 
     @Override
-    public void addMovieList(AddMovieListDTO movieList) {
+    public void addMovieList(AddMovieListDto movieList) {
         User user = getUserFromContext();
         user.getMovieList().clear();
 
@@ -68,10 +68,10 @@ public class DefaultUserService implements UserService {
     }
 
     @Override
-    public EditMovieListDTO getMovieList() {
+    public EditMovieListDto getMovieList() {
         User user = getUserFromContext();
         List<ListPosition> movieList = user.getMovieList();
-        EditMovieListDTO movieListDTO = new EditMovieListDTO();
+        EditMovieListDto movieListDTO = new EditMovieListDto();
         movieListDTO.setFirst(movieList.get(0).getMovie().getId());
         movieListDTO.setSecond(movieList.get(1).getMovie().getId());
         movieListDTO.setThird(movieList.get(2).getMovie().getId());
@@ -86,7 +86,7 @@ public class DefaultUserService implements UserService {
     }
 
     @Override
-    public void save(EditMovieListDTO movieList) {
+    public void save(EditMovieListDto movieList) {
         User user = getUserFromContext();
         user.getMovieList().clear();
 

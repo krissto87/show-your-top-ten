@@ -37,7 +37,8 @@
                 </h1>
             </sec:authorize>
             <h2 class="subtitle">
-                <br/> Kochasz dobre kino? Lubisz rankingi i klasyfikacje? ta strona jest dla Ciebie! Marnujesz swój cenny czas w poszukiwaniu jaki film czy serial włączyć w piątkowy wieczór?
+                <br/> Kochasz dobre kino? Lubisz rankingi i klasyfikacje? ta strona jest dla Ciebie! Marnujesz swój
+                cenny czas w poszukiwaniu jaki film czy serial włączyć w piątkowy wieczór?
                 Z nami będziesz miał go wiecej! Podgladąj najlepsze listy innych użytkowników i wybieraj co chcesz
                 oglądać!
             </h2>

@@ -16,15 +16,16 @@
 <body class="has-navbar-fixed-top">
 <jsp:include page="/WEB-INF/views/admin/header.jsp"/>
 <div class="buttons">
-<form method="get" action="/admin/serials/all">
-    <input class="button is-warning" type="submit" value="cancel"/>
-</form><br>
+    <form method="get" action="/admin/serials/all">
+        <input class="button is-warning" type="submit" value="cancel"/>
+    </form>
+    <br>
 
-<form method="post">
-    <input type="hidden" name="id" value="${id}"/>
-    <input class="button is-danger" type="submit" value="delete"/>
-    <sec:csrfInput/>
-</form>
+    <form method="post">
+        <input type="hidden" name="id" value="${id}"/>
+        <input class="button is-danger" type="submit" value="delete"/>
+        <sec:csrfInput/>
+    </form>
 </div>
 </body>
 </html>

@@ -3,8 +3,9 @@ package krissto87.showyourtopten.dtos;
 import lombok.Data;
 
 @Data
-public class AddMovieListDTO {
+public class EditMovieListDto {
 
+    private Long id;
     private Long first;
     private Long second;
     private Long third;
@@ -15,5 +16,4 @@ public class AddMovieListDTO {
     private Long eight;
     private Long ninth;
     private Long tenth;
-
 }

@@ -1,10 +1,9 @@
 package krissto87.showyourtopten.controllers;
 
 import krissto87.showyourtopten.domain.entities.Movie;
-import krissto87.showyourtopten.dtos.AddMovieDTO;
-import krissto87.showyourtopten.dtos.EditMovieDTO;
-import krissto87.showyourtopten.dtos.EditSerialDTO;
-import krissto87.showyourtopten.services.impl.DefaultAdminService;
+import krissto87.showyourtopten.dtos.AddMovieDto;
+import krissto87.showyourtopten.dtos.EditMovieDto;
+import krissto87.showyourtopten.services.impl.AdminServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,9 +17,9 @@ import java.util.List;
 @RequestMapping("/admin/movies")
 public class MovieAdminController {
 
-    private final DefaultAdminService adminService;
+    private final AdminServiceImpl adminService;
 
-    public MovieAdminController(DefaultAdminService adminService) {
+    public MovieAdminController(AdminServiceImpl adminService) {
         this.adminService = adminService;
     }
 
@@ -33,13 +32,13 @@ public class MovieAdminController {
 
     @GetMapping("/add")
     public String prepareAddMovie(Model model) {
-        model.addAttribute("movie", new AddMovieDTO());
+        model.addAttribute("movie", new AddMovieDto());
         return "admin/movies/add";
     }
 
     @PostMapping("/add")
-    public String processAddMovie(@ModelAttribute("movie") @Valid AddMovieDTO movie,
-                                           BindingResult result) {
+    public String processAddMovie(@ModelAttribute("movie") @Valid AddMovieDto movie,
+                                  BindingResult result) {
         if (result.hasErrors()) {
             return "admin/movies/add";
         }
@@ -56,13 +55,13 @@ public class MovieAdminController {
 
     @GetMapping("/edit/{id}")
     public String prepareEditMovie(Model model, @PathVariable Long id) {
-        EditMovieDTO movie = adminService.findMovieById(id);
+        EditMovieDto movie = adminService.findMovieById(id);
         model.addAttribute("movie", movie);
         return "admin/movies/edit";
     }
 
     @PostMapping("/edit/{id}")
-    public String processEditMovie(@ModelAttribute("movie") @Valid EditMovieDTO movie, BindingResult result,
+    public String processEditMovie(@ModelAttribute("movie") @Valid EditMovieDto movie, BindingResult result,
                                    @PathVariable Long id) {
         if (result.hasErrors()) {
             return "admin/movies/edit";
@@ -87,7 +86,7 @@ public class MovieAdminController {
 
     @GetMapping("/description/{id}")
     public String movieDescriptionPage(Model model, @PathVariable Long id) {
-        EditMovieDTO movie = adminService.findMovieById(id);
+        EditMovieDto movie = adminService.findMovieById(id);
         model.addAttribute("movie", movie);
         return "admin/movies/description";
     }

@@ -10,7 +10,8 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-@Component @Profile("heroku")
+@Component
+@Profile("heroku")
 public class SomeStarterClass implements ApplicationRunner {
 
     private final RoleRepository roleRepository;
@@ -21,7 +22,8 @@ public class SomeStarterClass implements ApplicationRunner {
         this.userRepository = userRepository;
     }
 
-    @Override @Transactional
+    @Override
+    @Transactional
     public void run(ApplicationArguments args) throws Exception {
         Role userRole = new Role();
         userRole.setId(1L);

@@ -28,26 +28,27 @@
     <div class="container">
         <div class="columns">
             <div class="column"></div>
-                <form:form modelAttribute="registrationData" method="post">
-                    <div class="field">
-                        <form:label path="username" cssClass="label"><s:message code="global.username"/></form:label>
-                        <div class="control has-icons-left">
-                            <s:message code="pages.register.form.helps.username" var="usernamePlaceholder"/>
-                            <form:input path="username" cssClass="input" required="true" placeholder="${usernamePlaceholder}"/>
-                            <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
-                            <form:errors path="username" element="p" cssClass="help is-danger"/>
-                        </div>
+            <form:form modelAttribute="registrationData" method="post">
+                <div class="field">
+                    <form:label path="username" cssClass="label"><s:message code="global.username"/></form:label>
+                    <div class="control has-icons-left">
+                        <s:message code="pages.register.form.helps.username" var="usernamePlaceholder"/>
+                        <form:input path="username" cssClass="input" required="true"
+                                    placeholder="${usernamePlaceholder}"/>
+                        <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
+                        <form:errors path="username" element="p" cssClass="help is-danger"/>
                     </div>
-                    <div class="field">
-                        <form:label path="email" cssClass="label"><s:message code="global.email"/></form:label>
-                        <div class="control has-icons-left">
-                            <s:message code="pages.register.form.helps.email" var="emailPlaceholder"/>
-                            <form:input path="email" cssClass="input" required="true" placeholder="${emailPlaceholder}"/>
-                            <span class="icon is-small is-left"><i
-                                    class="fas fa-envelope"></i></span>
-                            <form:errors path="email" element="p" cssClass="help is-danger"/>
-                        </div>
+                </div>
+                <div class="field">
+                    <form:label path="email" cssClass="label"><s:message code="global.email"/></form:label>
+                    <div class="control has-icons-left">
+                        <s:message code="pages.register.form.helps.email" var="emailPlaceholder"/>
+                        <form:input path="email" cssClass="input" required="true" placeholder="${emailPlaceholder}"/>
+                        <span class="icon is-small is-left"><i
+                                class="fas fa-envelope"></i></span>
+                        <form:errors path="email" element="p" cssClass="help is-danger"/>
                     </div>
+                </div>
 
                 <div class="field">
                     <label class="label">Password</label>

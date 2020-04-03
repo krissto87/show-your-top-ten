@@ -2,31 +2,31 @@ package krissto87.showyourtopten.services;
 
 import krissto87.showyourtopten.domain.entities.Movie;
 import krissto87.showyourtopten.domain.entities.Serial;
-import krissto87.showyourtopten.dtos.AddMovieDTO;
-import krissto87.showyourtopten.dtos.AddSerialDTO;
-import krissto87.showyourtopten.dtos.EditMovieDTO;
-import krissto87.showyourtopten.dtos.EditSerialDTO;
+import krissto87.showyourtopten.dtos.AddMovieDto;
+import krissto87.showyourtopten.dtos.AddSerialDto;
+import krissto87.showyourtopten.dtos.EditMovieDto;
+import krissto87.showyourtopten.dtos.EditSerialDto;
 
 import java.util.List;
 
 public interface AdminService {
-    void addMovie(AddMovieDTO addMovieDTO);
+    void addMovie(AddMovieDto addMovieDTO);
 
     List<Movie> findAllMovies();
 
-    EditMovieDTO findMovieById(Long id);
+    EditMovieDto findMovieById(Long id);
 
-    void save(EditMovieDTO movieDTO);
+    void save(EditMovieDto movieDTO);
 
     void deleteMovieById(Long id);
 
-    void addSerial(AddSerialDTO serial);
+    void addSerial(AddSerialDto serial);
 
     List<Serial> findAllSerials();
 
-    EditSerialDTO findSerialById(Long id);
+    EditSerialDto findSerialById(Long id);
 
-    void save (EditSerialDTO serialDTO);
+    void save(EditSerialDto serialDTO);
 
     void deleteSerialById(Long id);
 }

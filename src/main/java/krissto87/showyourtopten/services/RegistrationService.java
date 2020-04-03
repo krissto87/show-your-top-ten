@@ -1,7 +1,7 @@
 package krissto87.showyourtopten.services;
 
-import krissto87.showyourtopten.dtos.RegistrationDataDTO;
+import krissto87.showyourtopten.dtos.RegistrationDataDto;
 
 public interface RegistrationService {
-    void register(RegistrationDataDTO registrationData);
+    void register(RegistrationDataDto registrationData);
 }
